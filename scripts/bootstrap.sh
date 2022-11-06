@@ -1,0 +1,1 @@
+find . -name bootstrap.sh | while read installer ; do zsh -c "${installer}" ; done
