@@ -1,0 +1,42 @@
+# Taps
+tap 'homebrew/cask'
+tap 'homebrew/cask-fonts'
+tap 'homebrew/cask-versions'
+tap 'homebrew/bundle'
+
+cask "awscli"
+cask "alt-tab" # Windows style CMD+Tab previews
+cask "discord"
+cask "hot" # Display CPU Temp + Termal Throttling in Meni Bar
+cask "iterm2"
+cask "istat-menus"
+cask "rectangle" # Window Manager
+cask "secretive" # Use TouchID to guard SSH Keys
+cask "slack"
+cask "spotify"
+cask "tableplus" # DB Management software
+cask "ticktick"
+cask "visual-studio-code"
+
+# Quicklook Extensions
+cask 'qlmarkdown'
+cask 'quicklook-json'
+
+# Basic terminal stuff
+brew "coreutils" # The MacOS built in ones are shit
+brew "zsh" # Zsh comes installed but is slightly out of date
+
+# Tooling
+brew "bat" # Cat with wings!
+brew "delta" # Superior diffing tool, used for Git
+brew "ffmpeg"
+brew "fzf" # Fuzzy finder for terminal
+brew "git"
+brew "htop"
+brew "imagemagick"
+brew "jq"
+cask "lsd" # Better LS alternative
+brew "rsync"
+brew "tree"
+brew "wget"
+

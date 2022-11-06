@@ -1,0 +1,82 @@
+# Shortcut to this dotfiles path is $ZSH
+export ZSH=$HOME/.dotfiles
+
+# all of our zsh files
+typeset -U config_files
+config_files=($ZSH/**/*.zsh)
+
+# Load the path files
+for file in ${(M)config_files:#*/path.zsh}
+do
+  source $file
+done
+
+# load everything but the path and completion files
+for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
+do
+  source $file
+done
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+source "$(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme"
+
+# Path to your oh-my-zsh installation.
+export ZSH="/Users/dyl/.oh-my-zsh"
+
+# Set name of the theme to load --- see https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
+# Which plugins would you like to load? -Add wisely, as too many plugins slow down shell startup.
+plugins=(
+    aws
+    colored-man-pages
+    docker
+    F-Sy-H
+    git
+    golang
+    helm
+    httpie
+    kubectl
+    npm
+    macos
+    tmux
+    z
+    zsh-autosuggestions
+    zsh-nvm
+    fzf-tab # fzf-tab should be the last plugin to bind "^I"
+)
+
+source $OMZ/oh-my-zsh.sh
+
+# NVM - Node Version Manager
+# nvm is maintained through an oh my zsh plugin
+# This loads nvm bash_completion
+export NVM_COMPLETION=TRUE
+
+# Zsh Fuzzy Matching
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Use GNU coreutils over BSD/MacOS provided
+# PATH="$(brew --prefix)/opt/coreutils/libexec/gnubin:$PATH"
+
+# Enable iTerm2 integration
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# initialize autocomplete here, otherwise functions won't be loaded
+autoload -U compinit
+compinit
+
+# load every completion after autocomplete loads
+for file in ${(M)config_files:#*/completion.zsh}
+do
+  source $file
+done
