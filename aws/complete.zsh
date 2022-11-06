@@ -1,3 +1,3 @@
 # AWS CLI AutoComplete
 autoload bashcompinit && bashcompinit
-complete -C '/usr/local/bin/aws_completer' aws
+complete -C '/opt/homebrew/bin/aws_completer' aws

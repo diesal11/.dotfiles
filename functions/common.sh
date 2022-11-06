@@ -1,6 +1,6 @@
 createmp3() {
-    filename_orig = $(basename $1)
-    filename = "${filename_orig%.*}"
+    local filename_orig=$(basename $1)
+    local filename="${filename_orig%.*}"
     ffmpeg -i $filename_orig -codec:a libmp3lame -b:a 320k "$filename.mp3"
 }
 

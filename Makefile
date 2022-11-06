@@ -2,13 +2,13 @@
 .PHONY: all
 
 bootstrap:
-	@./scripts/bootstrap.sh
+	@./scripts/run-bootstrap.sh
 
 install-homebrew:
 	@./homebrew/install.sh
 
 install-zsh:
-	@./zsh/setup.sh
+	@./zsh/install.sh
 
 install: install-homebrew install-zsh bootstrap
 

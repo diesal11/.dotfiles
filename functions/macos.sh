@@ -1,7 +1,7 @@
 # enable-sudo-touchid
 # A function which adds the TouchID PAM to the sudo auth list
 # This is sometimes needed to be re-run after an update.
-enable-sudo-touchid() {
+enable_sudo_touchid() {
     sudo sed -i -e '1s;^;auth       sufficient     pam_tid.so\n;' /etc/pam.d/sudo
 }
 
@@ -22,7 +22,7 @@ dock_item() {
 
 # I literally always forget how to flush my DNS settings on macOS (in large part
 # because it changes every damn update).
-dns-flush() {
+dns_flush() {
     sudo dscacheutil -flushcache
     sudo killall -HUP mDNSResponder
 }

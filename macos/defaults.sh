@@ -3,16 +3,17 @@
 #
 
 source ./functions/macos.sh
-source ./setup-shared.sh
 
-enable-sudo-touchid()
+enable_sudo_touchid
+
+echo "[macos] Setting sensible defaults"
 
 # Remove unused apps
-sudo rm -rf /Applications/GarageBand.app
-sudo rm -rf /Applications/Keynote.app
-sudo rm -rf /Applications/Numbers.app
-sudo rm -rf /Applications/Pages.app
-sudo rm -rf /Applications/iMovie.app
+# sudo rm -rf /Applications/GarageBand.app
+# sudo rm -rf /Applications/Keynote.app
+# sudo rm -rf /Applications/Numbers.app
+# sudo rm -rf /Applications/Pages.app
+# sudo rm -rf /Applications/iMovie.app
 
 ###############################################################################
 # General UI/UX                                                               #
@@ -165,7 +166,7 @@ defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
 
 # Show the ~/Library folder
-chflags nohidden ~/Library && xattr -d com.apple.FinderInfo ~/Library
+chflags nohidden ~/Library
 
 # Show the /Volumes folder
 sudo chflags nohidden /Volumes
@@ -242,7 +243,7 @@ defaults write com.apple.dock persistent-apps -array \
     "$(dock_item /Applications/Visual\ Studio\ Code.app/)"
 
 # Add Applications, Downloads & Screenshots
-defaults write com.apple.dock persistent-apps -array \
+defaults write com.apple.dock persistent-others -array \
     "$(dock_item /Applications/)" \
     "$(dock_item /Users/dyl/Downloads/)" \
     "$(dock_item /Users/dyl/Pictures/Screenshots/)"
