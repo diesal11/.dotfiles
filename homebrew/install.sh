@@ -11,9 +11,9 @@ if [[ ! $(which brew) ]]; then
 
   # Install the correct homebrew for each OS type
   if [[ $(uname) = "Darwin" ]]; then
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   elif [[ "$(expr substr $(uname -s) 1 5)" = "Linux" ]]; then
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   fi
 fi
 
