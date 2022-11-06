@@ -5,6 +5,8 @@
 # This installs some of the common dependencies needed (or at least desired)
 # using Homebrew.
 
+DOTFILES="${DOTFILES_DIR:=${PWD}}"
+
 # Check for Homebrew
 if [[ ! $(which brew) ]]; then
   echo "Installing Homebrew for you."
@@ -17,4 +19,6 @@ if [[ ! $(which brew) ]]; then
   fi
 fi
 
-brew bundle install --file ./Brewfile
+export PATH="/opt/homebrew/bin:$PATH"
+
+brew bundle install --file $DOTFILES/homebrew/Brewfile
