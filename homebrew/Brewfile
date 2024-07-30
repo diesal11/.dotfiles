@@ -3,6 +3,7 @@ tap 'homebrew/cask'
 tap 'homebrew/cask-fonts'
 tap 'homebrew/cask-versions'
 tap 'homebrew/bundle'
+tap 'aws/tap'
 
 cask "alt-tab" # Windows style CMD+Tab previews
 cask "appcleaner"
@@ -10,17 +11,21 @@ cask "coconutbattery"
 cask "discord"
 cask "docker"
 cask "dotnet-sdk"
-cask "firefox"
-cask "hot" # Display CPU Temp + Termal Throttling in Meni Bar
+# cask "firefox"
+# cask "hot" # Display CPU Temp + Termal Throttling in Meni Bar
 cask "iina"
+cask "insomnia"
 cask "iterm2"
-cask "istat-menus"
+# cask "istat-menus"
+cask "karabiner-elements"
 cask "maccy"
+cask "usr-sse2-rdm"
 cask "rectangle" # Window Manager
 cask "secretive" # Use TouchID to guard SSH Keys
-cask "slack"
+# cask "slack"
 cask "spotify"
-cask "tableplus" # DB Management software
+# cask "tableplus" # DB Management software
+cask "the_silver_searcher" # Ag for Zsh
 cask "ticktick"
 cask "visual-studio-code"
 
@@ -30,19 +35,26 @@ cask 'quicklook-json'
 
 # Basic terminal stuff
 brew "coreutils" # The MacOS built in ones are shit
+brew "starship"
 brew "zsh" # Zsh comes installed but is slightly out of date
+brew "zsh-autosuggestions"
 
 # Tooling
 brew "awscli"
 brew "bat" # Cat with wings!
-brew "delta" # Superior diffing tool, used for Git
+brew "cmake"
 brew "ffmpeg"
 brew "fzf" # Fuzzy finder for terminal
 brew "git"
+brew "git-delta" # Superior diffing tool, used for Git
+brew "git-interactive-rebase-tool"
+brew "httpie"
 brew "htop"
 brew "imagemagick"
 brew "jq"
+brew "libomp"
 brew "lsd" # Better LS alternative
+brew "neovim"
 brew "rsync"
 brew "tree"
 brew "wget"

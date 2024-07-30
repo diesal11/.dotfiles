@@ -10,7 +10,8 @@ fi
 
 echo "› sudo softwareupdate -i -a"
 # sudo softwareupdate -i -a
+softwareupdate --install-rosetta
 
-# xcode-select --install
+xcode-select --install
 
 source ./macos/defaults.sh

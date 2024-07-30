@@ -249,7 +249,7 @@ defaults write com.apple.dock persistent-others -array \
     "$(dock_item /Users/dyl/Pictures/Screenshots/)"
 
 # Set menu bar clock to "EEE d MMM HH:mm:ss"
-defaults write com.apple.menuextra.clock "DateFormat" -string "\"EEE d MMM HH:mm:ss\""
+# defaults write com.apple.menuextra.clock "DateFormat" -string "\"EEE d MMM HH:mm:ss\""
 
 ###############################################################################
 # Safari & WebKit                                                             #
