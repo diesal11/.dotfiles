@@ -1,0 +1,1 @@
+. "$HOME/.swiftly/env.sh"

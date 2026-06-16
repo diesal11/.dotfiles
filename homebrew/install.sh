@@ -9,7 +9,7 @@ DOTFILES="${DOTFILES_DIR:=${PWD}}"
 
 # Check for Homebrew
 if [[ ! $(which brew) ]]; then
-  echo "Installing Homebrew for you."
+  echo "Installing Homebrew."
 
   # Install the correct homebrew for each OS type
   if [[ $(uname) = "Darwin" ]]; then

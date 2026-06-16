@@ -1,7 +1,7 @@
 # Some shortcuts
 export DOTFILES="${HOME}/.dotfiles"
 
-# all of our zsh files
+# all of our zsh files (don't include bootstrap completion or path.zsh)
 typeset -U config_files
 config_files=($DOTFILES/**/*.zsh)
 
@@ -17,11 +17,9 @@ do
     source $file
 done
 
-# Enable iTerm2 integration
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
 # initialize autocomplete here, otherwise functions won't be loaded
-autoload -U compinit; compinit
+autoload bashcompinit && bashcompinit
+autoload -Uz compinit && compinit
 
 # load every completion after autocomplete loads
 for file in ${(M)config_files:#*/completion.zsh}
@@ -29,4 +27,13 @@ do
   source $file
 done
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# bun completions
+[ -s "/Users/dyl/.bun/_bun" ] && source "/Users/dyl/.bun/_bun"
+
+# opencode
+export PATH=/Users/dyl/.opencode/bin:$PATH
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/dyl/.lmstudio/bin"
+# End of LM Studio CLI section
+

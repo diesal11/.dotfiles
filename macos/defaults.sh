@@ -2,7 +2,7 @@
 # First time setup script for MacOS
 #
 
-source ./functions/macos.sh
+source ./functions/macos.zsh
 
 enable_sudo_touchid
 

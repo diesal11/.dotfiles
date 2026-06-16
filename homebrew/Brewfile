@@ -1,31 +1,20 @@
 # Taps
-tap 'homebrew/cask'
-tap 'homebrew/cask-fonts'
-tap 'homebrew/cask-versions'
 tap 'homebrew/bundle'
 tap 'aws/tap'
+tap 'saulpw/vd'
 
 cask "alt-tab" # Windows style CMD+Tab previews
 cask "appcleaner"
 cask "coconutbattery"
 cask "discord"
-cask "docker"
-cask "dotnet-sdk"
-# cask "firefox"
-# cask "hot" # Display CPU Temp + Termal Throttling in Meni Bar
 cask "iina"
 cask "insomnia"
-cask "iterm2"
-# cask "istat-menus"
-cask "karabiner-elements"
+# cask "iterm2"
 cask "maccy"
 cask "usr-sse2-rdm"
 cask "rectangle" # Window Manager
 cask "secretive" # Use TouchID to guard SSH Keys
-# cask "slack"
 cask "spotify"
-# cask "tableplus" # DB Management software
-cask "the_silver_searcher" # Ag for Zsh
 cask "ticktick"
 cask "visual-studio-code"
 
@@ -38,6 +27,9 @@ brew "coreutils" # The MacOS built in ones are shit
 brew "starship"
 brew "zsh" # Zsh comes installed but is slightly out of date
 brew "zsh-autosuggestions"
+
+# Terminal window management
+brew "tmux"
 
 # Tooling
 brew "awscli"
@@ -56,6 +48,8 @@ brew "libomp"
 brew "lsd" # Better LS alternative
 brew "neovim"
 brew "rsync"
+brew "the_silver_searcher" # Ag for Zsh
 brew "tree"
+brew "uv"
+brew "visidata"
 brew "wget"
-
